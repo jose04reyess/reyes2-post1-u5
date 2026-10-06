@@ -1,0 +1,481 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y VARIABLES DE DISEÑO
+   ========================================================================== */
+:root {
+    --primary-color: #065A82;
+    --primary-dark: #043d59;
+    --primary-light: #1c7293;
+    --primary-subtle: #e8f1f5;
+    
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --bg-page: #f8fafc;
+    --bg-surface: #ffffff;
+    
+    --border-color: #e2e8f0;
+    --border-focus: #065A82;
+    
+    --error-text: #C62828;
+    --error-bg: #FFEBEE;
+    --error-border: #ffcdd2;
+    
+    --success-text: #1b5e20;
+    --success-bg: #e8f5e9;
+    
+    --prio-alta-bg: #ffebee;
+    --prio-alta-text: #c62828;
+    --prio-media-bg: #fff8e1;
+    --prio-media-text: #f57f17;
+    --prio-baja-bg: #e8f5e9;
+    --prio-baja-text: #2e7d32;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(6, 90, 130, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    line-height: 1.6;
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   ENCABEZADOS Y TÍTULOS
+   ========================================================================== */
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+h2 {
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Header principal */
+.app-header {
+    background: var(--bg-surface);
+    padding: 24px 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 4px solid var(--primary-color);
+}
+
+.user-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-greeting {
+    background: var(--primary-subtle);
+    color: var(--primary-dark);
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.user-form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   ALERTAS Y MENSAJES
+   ========================================================================== */
+.alerta {
+    padding: 14px 18px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alerta-error {
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-border);
+    font-weight: 500;
+}
+
+.alerta-info {
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+}
+
+.alerta-success {
+    background-color: var(--success-bg);
+    color: var(--success-text);
+    border: 1px solid #c8e6c9;
+}
+
+/* ==========================================================================
+   SECCIONES Y TARJETAS (CARDS)
+   ========================================================================== */
+.card {
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   FORMULARIO DE FILTRADO COMBINADO (.filtro)
+   ========================================================================== */
+.filtro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: flex-end;
+}
+
+.filtro-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.filtro-campo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filtro-acciones {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.contador-tareas {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ==========================================================================
+   FORMULARIOS Y CONTROLES DE ENTRADA
+   ========================================================================== */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background-color: #ffffff;
+    color: var(--text-main);
+    transition: all 0.2s ease-in-out;
+    outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(6, 90, 130, 0.15);
+}
+
+.form-agregar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.form-agregar input[type="text"] {
+    flex: 1;
+}
+
+/* ==========================================================================
+   BOTONES Y ENLACES
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 18px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 2px 8px rgba(6, 90, 130, 0.25);
+}
+
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+}
+
+.btn-danger {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+.btn-danger:hover {
+    background-color: #fecaca;
+    color: #991b1b;
+}
+
+.btn-success {
+    background-color: #16a34a;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+}
+
+.btn-success:hover {
+    background-color: #15803d;
+}
+
+.btn-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    background: var(--primary-subtle);
+    transition: background 0.15s ease;
+}
+
+.btn-link:hover {
+    background: #d4e7f0;
+    text-decoration: underline;
+}
+
+.btn-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease;
+}
+
+.btn-volver:hover {
+    transform: translateX(-3px);
+    color: var(--primary-dark);
+}
+
+/* ==========================================================================
+   TABLAS (Colapsadas y estilizadas)
+   ========================================================================== */
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-surface);
+    font-size: 0.95rem;
+}
+
+table th,
+table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-top: 1px solid var(--border-color);
+}
+
+table tbody tr:hover {
+    background-color: #fcfdfd;
+}
+
+/* Fila de tarea completada */
+tr.fila-completada td {
+    background-color: #fbfbfc;
+}
+
+.completada {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   INSIGNIAS Y BADGES
+   ========================================================================== */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+
+.badge-alta {
+    background-color: var(--prio-alta-bg);
+    color: var(--prio-alta-text);
+    border: 1px solid #ffcdd2;
+}
+
+.badge-media {
+    background-color: var(--prio-media-bg);
+    color: var(--prio-media-text);
+    border: 1px solid #ffe082;
+}
+
+.badge-baja {
+    background-color: var(--prio-baja-bg);
+    color: var(--prio-baja-text);
+    border: 1px solid #c8e6c9;
+}
+
+.badge-estado-pendiente {
+    background-color: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffe0b2;
+}
+
+.badge-estado-completada {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+.categoria-tag {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   TABLA VERTICAL DE DETALLE (.detalle)
+   ========================================================================== */
+.tabla-detalle-card {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+table.detalle {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+
+table.detalle th {
+    width: 35%;
+    background-color: #f8fafc;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+table.detalle td {
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.detalle-acciones {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   ESTADO VACÍO (EMPTY STATE)
+   ========================================================================== */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state p {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+}
